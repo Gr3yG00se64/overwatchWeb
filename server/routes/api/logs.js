@@ -14,12 +14,8 @@ else {
 
 // Get Logs
 router.get('/', (req, res) => {
-    //getLog().then(data => {
-        res.download(full_path);
-    //})
-    //.catch(err => {
-    //    res.json(['An error has occrued', err]);
-    //});
+     res.download(full_path);
+     console.log('Log File Sent');
 });
 
 

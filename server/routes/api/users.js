@@ -6,6 +6,7 @@ var db = require('../../db/interactions');
 
 // Get Users
 router.get('/', (req, res) => {
+    console.log('User List Retrieved');
     db.getUsers().then(users => {
         res.json(users);
     })
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
 
 // Add User
 router.post('/', (req, res) => {
+    console.log('New User Added');
     db.addUser(req.body).save(function (err, newUser) {
         if (err) { 
             res.json(['Error', err]);

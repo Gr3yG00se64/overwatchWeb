@@ -6,6 +6,7 @@ var db = require('../../db/interactions');
 
 //Get Device
 router.get('/', (req, res) => {
+    console.log('Devices Retrieved');
     db.getNetmap().then(devices => {
         res.json(devices);
     })
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
 
 // Add Device
 router.post('/', (req, res) => {
+    console.log('Device Added');
     db.addNetmap(req.body).save(function (err, newUser) {
         if (err) { 
             res.json(['Error', err]);

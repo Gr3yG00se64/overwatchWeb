@@ -6,6 +6,7 @@ var db = require('../../db/interactions');
 
 // Get Alerts
 router.get('/', (req, res) => {
+    console.log('Alerts Retrieved');
     db.getAlerts().then(alerts => {
         res.json(alerts);
     })

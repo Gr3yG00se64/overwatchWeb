@@ -18,12 +18,14 @@ var mod_data = require(full_path);
 
 //Get Modules
 router.get('/', (req, res) => {
+    console.log('Modules Requested');
     res.send(mod_data);
 });
 
 //Modify Module Activity Status
 router.post('/', (req, res) => {
     var i;
+    console.log('Modules Activity Changed');
     for(i=0; i < mod_data.modules.length; i++) {
         if (mod_data.modules[i].id == req.body.id) {
             mod_data.modules[i].enabled = !mod_data.modules[i].enabled;
