@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path')
 
 const router = express.Router();
 
@@ -8,8 +9,8 @@ var db = require('../../db/interactions');
 //Data Directory Path
 
 //Module JSON path
-const dataDir = '../../data/'
-var mod_data = require(dataDir+'mod_data');
+var full_path = path.resolve('server', 'data', 'mod_data.json')
+var mod_data = require(full_path);
 
 //Get Modules
 router.get('/', (req, res) => {
@@ -27,13 +28,13 @@ router.post('/', (req, res) => {
     }
 
     console.log(JSON.stringify(mod_data));
-    fs.writeFile(dataDir+'mod_data.json', JSON.stringify(mod_data), 'utf8', function (err, data) {
+    fs.writeFile(full_path, JSON.stringify(mod_data), 'utf8', function (err, data) {
         if(err) {console.log('error', err)}
 
-        res.send('Hola');
+    res.send('Successful');
     });
 
-    mod_data = require(dataDir+'mod_data');
+    mod_data = require(full_path);
 });
 
 module.exports = router;
