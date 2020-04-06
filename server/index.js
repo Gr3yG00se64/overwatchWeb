@@ -25,6 +25,8 @@ app.use('/api/modules', modules);
 
 // Handle Production
 if(process.env.NODE_ENV === 'production') {
+    console.log("Server is in Production Mode");
+    
     // Static Folder
     app.use(express.static(__dirname + '/public/'));
 
