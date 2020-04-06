@@ -26,7 +26,7 @@ app.use('/api/modules', modules);
 // Handle Production
 if(process.env.NODE_ENV === 'production') {
     // Static Folder
-    app.use(express.static(__dirname + '/pulic'));
+    app.use(express.static(__dirname + '/public'));
 
     // Handle SPA
     app.get(/.*/);
