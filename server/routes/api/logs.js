@@ -5,12 +5,8 @@ const router = express.Router();
 
 const path = require('path');
 
-if(process.env.NODE_ENV === 'production') {
-    var full_path = path.resolve('data', 'log.zip')
-}
-else {
-    var full_path = path.resolve('server', 'data', 'log.zip')
-}
+//Absolute Path to log file
+var full_path = path.resolve(__dirname, 'data', 'log.zip');
 
 // Get Logs
 router.get('/', (req, res) => {

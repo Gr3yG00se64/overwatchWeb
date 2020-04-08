@@ -7,12 +7,7 @@ const router = express.Router();
 var db = require('../../db/interactions');
 
 //Module JSON path
-if(process.env.NODE_ENV === 'production') {
-    var full_path = path.resolve('data', 'mod_data.json')
-}
-else {
-    var full_path = path.resolve('server', 'data', 'mod_data.json')
-}
+var full_path = path.resolve(__dirname, 'data', 'mod_data.json');
 
 var mod_data = require(full_path);
 
