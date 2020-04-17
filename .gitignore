@@ -1,3 +1,4 @@
 /overwatch-web-client-dev
 node_modules
 /server/routes/api/data/log.zip
+/server/routes/api/data/serverinfo.json

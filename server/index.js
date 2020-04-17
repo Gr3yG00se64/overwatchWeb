@@ -16,12 +16,14 @@ const alerts = require('./routes/api/alerts');
 const devices = require('./routes/api/devices');
 const logs = require('./routes/api/logs');
 const modules = require('./routes/api/modules');
+const pihole = require('./routes/api/pihole')
 
 app.use('/api/users', users); 
 app.use('/api/alerts', alerts);
 app.use('/api/devices', devices);
 app.use('/api/logs', logs);
 app.use('/api/modules', modules);
+app.use('/api/pihole', pihole)
 
 // Handle Production
 if(process.env.NODE_ENV === 'production') {

@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{f820:function(e,a,t){"use strict";t.r(a);var s=function(){var e=this,a=e.$createElement,s=e._self._c||a;return s("div",{staticClass:"text-center"},[s("img",{staticClass:"my-5",attrs:{alt:"Vue logo",src:t("cf05")}}),s("GenInfo",{attrs:{header:e.header,message:e.message}})],1)},n=[],r=t("f447"),o={name:"home",data:function(){return{header:"About Overwatch",message:"Overwatch is a free and open-source program that was created with individuals and small businesses in mind."}},components:{GenInfo:r["a"]}},c=o,i=t("2877"),u=Object(i["a"])(c,s,n,!1,null,null,null);a["default"]=u.exports}}]);
-//# sourceMappingURL=about.4c3d0ebb.js.map
+//# sourceMappingURL=about.3872107f.js.map

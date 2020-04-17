@@ -13,7 +13,6 @@ var mod_data = require(full_path);
 
 //Get Modules
 router.get('/', (req, res) => {
-    console.log('Modules Requested');
     res.send(mod_data);
 });
 
