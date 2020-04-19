@@ -43,7 +43,8 @@ var wifi_data = require(full_wifi_path);
 
 router.get('/wifi', (req, res) => {
     console.log('Wifi Info Retrieved');
-    res.send(wifi_data)
+    var sending_wifi = {ssid: wifi_data.ssid}
+    res.send(sending_wifi)
 });
 
 router.post('/wifi', (req, res) => {
