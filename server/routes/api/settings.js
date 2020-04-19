@@ -61,4 +61,19 @@ router.post('/wifi', (req, res) => {
     api_data = require(full_wifi_path);
 });
 
+var full_login_path = path.resolve(__dirname, 'data', 'login.json');
+// User Settings
+router.post('/adduser', (req, res) => {
+    console.log('User Added');
+
+    //auth_data = {username: req.body.user, password: req.body.user_password};
+    //wifi_data.password = req.body.password;
+
+    fs.writeFile(full_login_path, JSON.stringify({username: req.body.username, password: req.body.password}), 
+    'utf8', function (err, data) {
+        if(err) {console.log('error', err)}
+
+    res.send('Successful');
+    });
+});
 module.exports = router;
