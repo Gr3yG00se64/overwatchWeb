@@ -24,8 +24,8 @@ app.use('/api/alerts', alerts);
 app.use('/api/devices', devices);
 app.use('/api/logs', logs);
 app.use('/api/modules', modules);
-app.use('/api/pihole', pihole)
-app.use('/api/settings', settings)
+app.use('/api/pihole', pihole);
+app.use('/api/settings', settings);
 
 // Handle Production
 if(process.env.NODE_ENV === 'production') {

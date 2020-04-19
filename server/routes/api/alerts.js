@@ -15,4 +15,18 @@ router.get('/', (req, res) => {
     });
 });
 
+// Remove Alert
+router.post('/delete', (req, res) => {
+    console.log('Alert Deleted');
+
+    db.removeAlert(req.body);
+});
+
+// Remove All Alert
+router.post('/clear', (req, res) => {
+    console.log('All Alerts Deleted');
+
+    db.clearAlerts();
+});
+
 module.exports = router;

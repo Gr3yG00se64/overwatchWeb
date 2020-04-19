@@ -3,3 +3,4 @@ node_modules
 /server/routes/api/data/log.zip
 /server/routes/api/data/serverinfo.json
 /server/routes/api/data/login.json
+/server/routes/api/data/wifisettings.json

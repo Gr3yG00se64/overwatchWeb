@@ -71,6 +71,22 @@ function addAlert(request) {
     return newAlert;
 }
 
+function removeAlert(request) {
+    Alert.deleteOne({ _id: request.id }, function (err) {
+        if (err) return handleError(err);
+      });
+
+      return 'Passed';
+}
+
+function clearAlerts(request) {
+    Alert.deleteMany({}, function (err) {
+        if (err) return handleError(err);
+      });
+
+      return 'Passed';
+}
+
 function getNetmap() {
     return Netmap.find();
 }
@@ -93,6 +109,14 @@ function removeNetmap(request) {
       return 'Passed';
 }
 
+function clearNetmap(request) {
+    Netmap.deleteMany({}, function (err) {
+        if (err) return handleError(err);
+      });
+
+      return 'Passed';
+}
+
 module.exports = {
     //User Exports
     getUser,
@@ -102,11 +126,14 @@ module.exports = {
     //Alert Exports
     getAlerts,
     addAlert,
+    removeAlert,
+    clearAlerts,
 
     //Netmap Exports
     getNetmap,
     addNetmap,
-    removeNetmap
+    removeNetmap,
+    clearNetmap
 };
 
 

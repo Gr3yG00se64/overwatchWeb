@@ -28,4 +28,18 @@ router.post('/', (req, res) => {
       }); 
 });
 
+//Remove Device
+router.post('/delete', (req, res) => {
+    console.log('Device Removed');
+    
+    db.removeNetmap(req.body);
+});
+
+//Remove all devices
+router.post('/clear', (req, res) => {
+    console.log('All Devices Removed');
+    
+    db.clearNetmap();
+});
+
 module.exports = router;
