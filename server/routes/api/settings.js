@@ -59,7 +59,7 @@ router.post('/wifi', (req, res) => {
     res.send('Successful');
     });
 
-    api_data = require(full_wifi_path);
+    wifi_data = require(full_wifi_path);
 });
 
 var full_login_path = path.resolve(__dirname, 'data', 'login.json');
@@ -77,4 +77,32 @@ router.post('/adduser', (req, res) => {
     res.send('Successful');
     });
 });
+
+//Expiry Settings
+
+var full_expiry_path = path.resolve(__dirname, 'data', 'expiry.json');
+var expiry_data = require(full_expiry_path);
+
+router.get('/expiry', (req, res) => {
+    console.log('Expiry Data Retrieved');
+    res.send(expiry_data)
+});
+
+router.post('/expiry', (req, res) => {
+    console.log('Expiry Settings Changed');
+
+    //auth_data = {username: req.body.user, password: req.body.user_password};
+    //wifi_data.password = req.body.password;
+
+    fs.writeFile(full_expiry_path, JSON.stringify({alert: req.body.alert}), 
+    'utf8', function (err, data) {
+        if(err) {console.log('error', err)}
+
+    res.send('Successful');
+
+    expiry_data = require(full_expiry_path);
+    
+    });
+});
+
 module.exports = router;

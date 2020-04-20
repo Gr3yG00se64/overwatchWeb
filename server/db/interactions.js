@@ -102,7 +102,7 @@ function addNetmap(request) {
 }
 
 function removeNetmap(request) {
-    Netmap.deleteOne({ id: request.id }, function (err) {
+    Netmap.deleteOne({ _id: request.id }, function (err) {
         if (err) return handleError(err);
       });
 

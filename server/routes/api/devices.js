@@ -1,10 +1,11 @@
 const express = require('express');
+const path  = require('path');
 
 const router = express.Router();
 
 var db = require('../../db/interactions');
 
-//Get Device
+//Get Registered Devices
 router.get('/', (req, res) => {
     console.log('Devices Retrieved');
     db.getNetmap().then(devices => {
@@ -13,6 +14,17 @@ router.get('/', (req, res) => {
     .catch(err => {
         res.json(['An error has occured:', err]);
     });
+});
+
+//Get Unregistered Devices
+
+var full_unreg_path = path.resolve(__dirname, 'data', 'unregDevices.json');
+
+var unreg_data = require(full_unreg_path);
+
+router.get('/unregistered', (req, res) => {
+    console.log('Unregistered Devices Retrieved');
+    res.send(unreg_data)
 });
 
 // Add Device
