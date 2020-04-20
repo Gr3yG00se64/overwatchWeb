@@ -23,6 +23,8 @@ var full_unreg_path = path.resolve(__dirname, 'data', 'unregDevices.json');
 var unreg_data = require(full_unreg_path);
 
 router.get('/unregistered', (req, res) => {
+    unreg_data = require(full_unreg_path);
+    
     console.log('Unregistered Devices Retrieved');
     res.send(unreg_data)
 });

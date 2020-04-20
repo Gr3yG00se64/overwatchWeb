@@ -84,6 +84,7 @@ var full_expiry_path = path.resolve(__dirname, 'data', 'expiry.json');
 var expiry_data = require(full_expiry_path);
 
 router.get('/expiry', (req, res) => {
+    expiry_data = require(full_expiry_path);
     console.log('Expiry Data Retrieved');
     res.send(expiry_data)
 });
